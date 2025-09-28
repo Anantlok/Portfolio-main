@@ -6,16 +6,20 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        'window-bg': '#fdeca6',
-        'window-frame': '#e7d8b4',
-        'window-light': '#ffffff',
-        'window-dark': '#8a8987',
+        'ivory': '#F8F4E3',       // A soft, off-white cream
+        'stone': '#D7CEC7',       // A muted, light taupe/off-white
+        'charcoal': '#000000',    // A dark, slate blue-gray for text
+        // Alias for consistency
+        'window-frame': '#D7CEC7', 
+        'window-bg': '#F8F4E3',
+        'window-dark': '#3E4C59',
       },
       fontFamily: {
-        mixed: ['"MixedRegular"', 'sans-serif'],
-        poster: ['"HybridPosterFont"', 'sans-serif'],
-      },
+        'mixed': ['MixedRegular', 'sans-serif'],
+        'hybrid': ['HybridPosterFont', 'serif'],
+      }
     },
   },
   plugins: [],
 }
+
