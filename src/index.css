@@ -1,0 +1,100 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'HybridPosterFont';
+  src: url('./assets/fonts/HybridPosterFont.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'MixedRegular';
+  src: url('./assets/fonts/Mixed-Regular.ttf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* --- Animated Download Resume Button --- */
+@keyframes gradient-fill {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+.animated-border-button {
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.animated-border-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  width: 200%;
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgb(255, 230, 230),
+    transparent
+  );
+  transition: transform 0.3s ease;
+  animation: gradient-fill 2s linear infinite;
+  z-index: -1;
+}
+
+.animated-border-button:hover::before {
+  animation-play-state: paused;
+}
+
+
+/* --- Dotted Background (Updated) --- */
+.bg-grid {
+  background-color: #a8d8d3;
+  /* Uses radial-gradient to create circles */
+  background-image: radial-gradient(circle at 1px 1px, rgba(0,0,0,0.15) 1px, transparent 0);
+  /* Adjust size for dot spacing */
+  background-size: 25px 25px; 
+  animation: move-grid 30s linear infinite;
+}
+
+@keyframes move-grid {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    /* The values should match your background-size */
+    background-position: 25px 25px;
+  }
+}
+
+/* --- Custom Scrollbar (Reverted to Mini-Window Style) --- */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 16px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background-color: transparent; /* Makes the track invisible */
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #d3d3d3; /* Matches the window frame color */
+  border: 2px solid black;
+  border-radius: 2px;
+  box-shadow: 2px 2px 0px black; /* Mimics the retro window shadow */
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background-color: #b0b0b0; /* A darker grey for hover */
+}
+
+/* Fallback for Firefox */
+.custom-scrollbar {
+  scrollbar-width: auto;
+  scrollbar-color: #d3d3d3 transparent; /* thumb color, track color */
+}
