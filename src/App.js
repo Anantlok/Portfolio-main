@@ -46,19 +46,20 @@ export default function App() {
       {/* Main layout container, sits on top of the background */}
       <div className="relative z-10 h-full grid grid-rows-[auto_1fr]">
         {/* Navigation Bar */}
-        <div className="w-full px-3 pt-3 pb-1">
+        <div className="w-full px-3 pt-3 pb-2">
           <div className="w-full bg-window-frame text-sm flex items-center justify-between border border-black rounded-lg shadow-[4px_4px_0px_black] p-2 px-4">
-            <div className="flex items-center gap-4 text-black">
-              <div className="w-4 h-4 rounded-full bg-gray-300 border border-black"></div>
+            <div className="flex items-center gap-2 sm:gap-4 text-black">
+              <div className="w-4 h-4 rounded-full bg-gray-300 border border-black flex-shrink-0"></div>
               <div className="flex items-center font-semibold">
-                <span className="px-3 cursor-pointer hover:bg-black hover:text-white transition-colors">File</span>
+                <span className="px-2 sm:px-3 cursor-pointer hover:bg-black hover:text-white transition-colors">File</span>
                 <div className="h-4 w-px bg-black"></div>
-                <span className="px-3 cursor-pointer hover:bg-black hover:text-white transition-colors">Edit</span>
+                <span className="px-2 sm:px-3 cursor-pointer hover:bg-black hover:text-white transition-colors">Edit</span>
                 <div className="h-4 w-px bg-black"></div>
-                <span className="px-3 cursor-pointer hover:bg-black hover:text-white transition-colors">View</span>
+                <span className="px-2 sm:px-3 cursor-pointer hover:bg-black hover:text-white transition-colors">View</span>
               </div>
             </div>
-            <div className="flex items-center gap-2 text-black font-semibold cursor-pointer">
+            {/* Date range hidden on mobile, shown on small screens and up */}
+            <div className="hidden sm:flex items-center gap-2 text-black font-semibold cursor-pointer">
               <span>{dateRange}</span>
               <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" viewBox="0 0 16 16">
                 <path fillRule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708 .708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
@@ -73,17 +74,17 @@ export default function App() {
           <section className="h-full flex items-center justify-center snap-center p-4 sm:p-8 focus:outline-none">
             <Window 
               title="Anant Lokhande - Portfolio.txt" 
-              className="w-[90vw] max-w-4xl h-[70vh] max-h-[600px]"
+              className="w-full max-w-4xl h-[85vh] sm:h-[70vh] max-h-[600px]"
             >
               <div className="flex flex-col items-center justify-center text-center h-full">
                 <div className="flex-grow flex flex-col items-center justify-center">
-                  <motion.h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 flex items-center gap-3" initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }}>
+                  <motion.h1 className="text-2xl sm:text-4xl md:text-5xl font-bold mb-4 flex items-center gap-3" initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }}>
                     <FaStar className="text-yellow-400" /> Hi, I'm Anant Lokhande <FaHeart className="text-red-500" />
                   </motion.h1>
-                  <p className="max-w-2xl mb-6 leading-relaxed">
+                  <p className="max-w-2xl mb-6 leading-relaxed px-2">
                     A software engineer transforming creative ideas into lucrative solutions.
                   </p>
-                  <div className="flex flex-wrap justify-center items-center gap-4">
+                  <div className="flex flex-wrap justify-center items-center gap-3 sm:gap-4">
                     <a href="https://github.com/Anantlok" target="_blank" rel="noopener noreferrer"><RetroButton><FaGithub /> GitHub</RetroButton></a>
                     <a href="https://www.linkedin.com/in/anant-lokhande-82917a232/" target="_blank" rel="noopener noreferrer"><RetroButton><FaLinkedin /> LinkedIn</RetroButton></a>
                     <a href="mailto:anant.alomano@gmail.com"><RetroButton><FaEnvelope /> Email</RetroButton></a>
@@ -103,7 +104,7 @@ export default function App() {
           </section>
 
           <section className="h-full flex items-center justify-center snap-center p-4 sm:p-8 focus:outline-none">
-            <Window title="C:\Skills" className="max-w-5xl w-full h-[80vh] max-h-[750px]">
+            <Window title="C:\Skills" className="max-w-5xl w-full h-[90vh] sm:h-[80vh] sm:max-h-[750px]">
                 <h2 className="text-2xl font-bold text-center mb-8">What I Bring to the Table</h2>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                   {skills.map((skill) => (
@@ -124,7 +125,7 @@ export default function App() {
           </section>
 
           <section className="h-full flex items-center justify-center snap-center p-4 sm:p-8 focus:outline-none">
-            <Window title="C:\Projects" className="max-w-5xl w-full h-[80vh] max-h-[750px]">
+            <Window title="C:\Projects" className="max-w-5xl w-full h-[90vh] sm:h-[80vh] sm:max-h-[750px]">
               <div className="flex flex-col h-full">
                 <h2 className="text-xl font-bold mb-6 flex items-center justify-center gap-2">
                   <FaProjectDiagram /> Projects <FaProjectDiagram />
@@ -159,7 +160,7 @@ export default function App() {
           </section>
 
           <section className="h-full flex items-center justify-center snap-center p-4 sm:p-8 focus:outline-none">
-            <Window title="Contact Me" className="max-w-5xl w-full h-[80vh] max-h-[750px]">
+            <Window title="Contact Me" className="max-w-5xl w-full h-[90vh] sm:h-[80vh] sm:max-h-[750px]">
               <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
                 <form className="flex flex-col gap-4">
                   <input type="text" placeholder="Your Name" className="p-2 bg-white border-2 border-black rounded-lg" />
@@ -180,3 +181,4 @@ export default function App() {
     </div>
   );
 }
+
