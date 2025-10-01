@@ -6,13 +6,12 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        'ivory': '#F8F4E3',       // A soft, off-white cream
-        'stone': '#D7CEC7',       // A muted, light taupe/off-white
-        'charcoal': '#000000',    // A dark, slate blue-gray for text
-        // Alias for consistency
-        'window-frame': '#D7CEC7', 
-        'window-bg': '#F8F4E3',
-        'window-dark': '#3E4C59',
+        // --- New Natural Green Palette ---
+        'background': '#FDFBF4',      // Use for the main page background
+        'surface': '#D0D8C3',         // Use for cards, modals, or secondary backgrounds
+        'primary': '#008F4C',         // Use for primary buttons, links, and important accents
+        'highlight-soft': '#D1DEA9',  // Use for hover states or subtle highlights
+        'text-primary': '#073E1E',    // Use for headings and primary text for high contrast
       },
       fontFamily: {
         'mixed': ['MixedRegular', 'sans-serif'],
@@ -22,4 +21,3 @@ module.exports = {
   },
   plugins: [],
 }
-
