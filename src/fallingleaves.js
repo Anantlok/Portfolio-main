@@ -22,7 +22,7 @@ const FallingLeaves = () => {
       return {
         x: Math.random() * canvas.width,
         y: Math.random() * -canvas.height, 
-        size: Math.random() * 20 + 5, 
+        size: Math.random() * 70 + 30, 
         speed: Math.random() * 1 + 0.5,
         sway: Math.random() * 0.5 - 0.25,
         swaySpeed: Math.random() * 0.02 + 0.01,

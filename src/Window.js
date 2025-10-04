@@ -8,7 +8,7 @@ const FaTimes = () => <svg stroke="currentColor" fill="currentColor" strokeWidth
 export default function Window({ title, children, className }) {
   return (
     // Updated for a sleeker look: 1px border, softer shadow, and uses custom theme colors
-    <div className={`bg-window-frame border border-window-dark rounded-lg shadow-xl shadow-charcoal/20 flex flex-col max-h-full ${className}`}>
+    <div className={`bg-window-frame border border-window-dark rounded-lg shadow-xl shadow-charcoal/20 flex flex-col  ${className}`}>
       {/* Title Bar: Thinner bottom border */}
       <div className="flex-shrink-0 flex items-center justify-between px-2 py-1 border-b border-window-dark">
         <h2 className="font-bold text-window-dark text-sm">{title}</h2>
@@ -35,7 +35,7 @@ export default function Window({ title, children, className }) {
         </div>
       </div>
       {/* Content Area: Uses the themed background color */}
-      <div className="bg-window-bg p-6 md:p-10 flex-1 overflow-y-auto custom-scrollbar">
+      <div className="bg-window-bg p-6 md:p-10">
         {children}
       </div>
     </div>
